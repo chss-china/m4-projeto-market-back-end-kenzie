@@ -77,15 +77,12 @@ const searchId = (request: Request, response: Response): Response => {
 const updateProducts = (request: Request, response: Response): Response => {
   const index = response.locals.product.indexProduct;
   const updatedProduct: IFoodProduct | ICleaningProduct = market[index];
-
+  console.log(market[index]);
   const { name, price, weight, calories } = request.body;
 
   market[index] = {
     ...updatedProduct,
-    name: name,
-    price: price,
-    weight: weight,
-    calories: calories,
+    ...request.body,
   };
 
   return response.json(market[index]);

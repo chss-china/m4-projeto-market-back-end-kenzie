@@ -7,11 +7,7 @@ interface IProduct {
   expirationDate: number | Date;
 }
 type IProductRequest = Omit<IProduct, "id">;
-interface IRequestBody {
-  name: string;
-  price: number;
-  weight: number;
-  section: "food" | "cleaning";
+interface IRequestBody extends IProductRequest {
   calories?: string;
 }
 interface ICleaningProduct extends IProduct {}

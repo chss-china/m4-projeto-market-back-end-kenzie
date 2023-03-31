@@ -15,8 +15,8 @@ const middlewareNameProducts = (
 ): Response | void => {
   if (request.method === "POST") {
     const requestBody: IRequestBody[] = request.body;
-    for (var j = 0; j < requestBody.length; j++) {
-      for (var i = 0; i < market.length; i++) {
+    for (let j = 0; j < requestBody.length; j++) {
+      for (let i = 0; i < market.length; i++) {
         if (requestBody[j].name === market[i].name) {
           return response.status(409).json({
             error: "Product already registered",
@@ -25,7 +25,7 @@ const middlewareNameProducts = (
       }
     }
   } else if (request.method === "PATCH") {
-    for (var b = 0; b < market.length; b++) {
+    for (let b = 0; b < market.length; b++) {
       if (request.body.name === market[b].name) {
         return response.status(409).json({
           error: "Product already registered",

@@ -18,6 +18,7 @@ const createProducts = (request: Request, response: Response): Response => {
 
   const productsMap = productsData.map((data: IProductRequest) => {
     const id = market[market.length - 1] ? market[market.length - 1].id + 1 : 1;
+
     const newProduct: IProduct = {
       id: id,
       ...data,
@@ -77,6 +78,8 @@ const searchId = (request: Request, response: Response): Response => {
 const updateProducts = (request: Request, response: Response): Response => {
   const index = response.locals.product.indexProduct;
   const updatedProduct: IFoodProduct | ICleaningProduct = market[index];
+
+  const { name, price, weight, calories } = request.body;
 
   market[index] = {
     ...updatedProduct,

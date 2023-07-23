@@ -1,5 +1,5 @@
 # Mercado autônomo
-
+## Resultado do projeto foi excelente obtendo nota maxima e passando em todos testes
 ## Introdução
 
 Recebemos uma demanda para realizar a criação de uma API REST. Essa API será utilizada para organização do estoque de uma startup em processo de testes que pretende se transformar em uma rede de mercados autônomos (Smart Store). Hoje o mercado trabalha com apenas dois tipos de produtos: **comida** e **limpeza**.
